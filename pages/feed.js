@@ -11,15 +11,14 @@ export default () => {
       </picture>
       <picture>
         <a href="#home" id="logout">
-            <img  class="bottonBack" src="./img/botao-voltar.png" alt="bottonBack">
+            <img  class="button-logout" src="./img/botao-voltar.png" alt="Botão Sair">
         </a>
-      </picture>  
-      <div class= line-header> </div>   
-      <div class="line-header"></div>
+      </picture>     
   </nav>
+  <div class= line-header> </div>  
   <section  class="publish "id="publish">
-    <textarea class="post-area-text" placeholder="O que você quer compartilhar?"></textarea>
-    <div id='selected-theme'>
+    <textarea class="post-area-text" placeholder="O que você quer compartilhar?" cols="33" rows="5"></textarea>
+    <div class ="buttons" id='selected-theme'>
       <select id='theme'>
         <option value disabled selected>Assunto</option>
         <option value="Destinos">Destinos</option>
@@ -42,8 +41,8 @@ export default () => {
     });
   });
   return feed;
-  }
-  
+}
+
 
 
 

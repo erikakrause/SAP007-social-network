@@ -1,4 +1,4 @@
-  import login from './pages/home.js';
+import login from './pages/home.js';
 import register from './pages/register.js';
 import feed from './pages/feed.js';
 
