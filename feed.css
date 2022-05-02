@@ -14,7 +14,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: #fefaef;
+  background: #FEFAEF;
   color: #fff;
   height: 50px;
   padding: 1em;
@@ -34,16 +34,15 @@ body {
 .line-header {
   margin-top: 15px;
   width: 100%;
-  border: 1px solid #48d9b0;
+  border: 1px solid #48D9B0;
 }
 
 .publish {
-  width: 320px;  
+  width: 320px;
   border-radius: 8px;
   background-color: #F5EFEF;
   margin-top: 20px;
   margin-left: 20px;
-  position: absolute;
 }
 
 textarea {
@@ -56,6 +55,14 @@ textarea {
 textarea:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
+}
+
+.posts {
+  width: 320px;
+  border-radius: 8px;
+  background-color: #F5EFEF;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 select,
@@ -75,18 +82,16 @@ button {
 select {
   margin-left: 120px;
 }
+
 button {
   float: right;
   margin-right: 20px;
   margin-bottom: 10px;
 }
+
 .buttons {
   display: flex;
   position: absolute;
-}
-
-footer {
-  display: none;
 }
 
 @media (min-width: 900px) {
@@ -103,25 +108,26 @@ footer {
     width: 580px;
     margin-top: 50px;
     margin-left: 400px;
-
   }
 
   textarea {
-    width:500px;
-    font-size:18px;
+    width: 500px;
+    font-size: 18px;
   }
 
-  select, button {
-    width:100px;
-    height:40px;
+  select,
+  button {
+    width: 100px;
+    height: 40px;
     font-size: 16px;
     margin-bottom: 20px;
   }
-  
+
   select {
     margin-left: 280px;
   }
+
   button {
     margin-right: 35px;
   }
-  }
+}
