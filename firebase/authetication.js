@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   updateProfile,
+  onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
 export const auth = getAuth();
@@ -15,10 +16,15 @@ export function signIn(email, password) {
   return signInWithEmailAndPassword(auth, email, password).then(
     (userCredential) => {
       const user = userCredential.user;
-      console.log('entrou', userCredential);
-      return userCredential;
+      return user;
     }
   );
+}
+
+export function verifyLogged(callback) {
+  onAuthStateChanged(auth, (user) => {
+    callback(user !== null);
+  });
 }
 
 export function signInWithGoogle(auth, provider) {
@@ -27,6 +33,7 @@ export function signInWithGoogle(auth, provider) {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
+      console.log(user);
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       console.log('googlei');
@@ -43,14 +50,17 @@ export function userCreate(email, password, name) {
   return createUserWithEmailAndPassword(auth, email, password).then(
     (userCredential) => {
       updateProfile(auth.currentUser, {
-        displayName: name, photoURL: "https://example.com/jane-q-user/profile.jpg"
-      }).then(() => {
-        // Profile updated!
-        // ...
-      }).catch((error) => {
-        // An error occurred
-        // ...
-      });
+        displayName: name,
+        photoURL: 'https://example.com/jane-q-user/profile.jpg',
+      })
+        .then(() => {
+          // Profile updated!
+          // ...
+        })
+        .catch((error) => {
+          // An error occurred
+          // ...
+        });
       const user = userCredential.user;
       return user;
     }
