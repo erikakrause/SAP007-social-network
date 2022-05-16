@@ -103,8 +103,8 @@ export default async function feed() {
         <ul>
           <li>
           <p class="title-username">${post.userName}</p> 
-          <p class="data">${convertDateObject(post.date)}</p> 
-          <p contenteditable='false' class= "paragrafo" data-textId='${post.id}'>${post.textPost}</p>
+          <p class="date">${convertDateObject(post.date)}</p> 
+          <p contenteditable='false' class= "paragraph" data-textId='${post.id}'>${post.textPost}</p>
           </li>
         </ul>
         
@@ -129,8 +129,8 @@ export default async function feed() {
         const postId = e.currentTarget.dataset.postId; // elemento do click + id do post/
         // eslint-disable-next-line max-len
         const selectEdit = elementPost.find((item) => item.id === postId); // pega primeiro elemento que encontrar que tem o id do post
-        const paragrafo = feed.querySelector(`[data-textId="${postId}"]`);
-        paragrafo.setAttribute('contenteditable', 'true'); // deixando editavel// 129- em que lugar do templante chamo o outro template
+        const paragraph = feed.querySelector(`[data-textId="${postId}"]`);
+        paragraph.setAttribute('contenteditable', 'true'); // deixando editavel// 129- em que lugar do templante chamo o outro template
         e.currentTarget.parentElement.insertAdjacentHTML(
           'beforeend',
           ` 
@@ -145,15 +145,15 @@ export default async function feed() {
         e.currentTarget.parentElement
           .querySelector('.cancel-button')
           .addEventListener('click', (event) => {
-            paragrafo.textContent = selectEdit.textPost; // voltando texto antigo
-            paragrafo.setAttribute('contenteditable', 'false'); // bloqueio para não editar mais
+            paragraph.textContent = selectEdit.textPost; // voltando texto antigo
+            paragraph.setAttribute('contenteditable', 'false'); // bloqueio para não editar mais
             event.currentTarget.parentElement.parentElement.remove(); // removendo os icones
           });
         e.currentTarget.parentElement
           .querySelector('.save-button')
           .addEventListener('click', (event) => {
-            paragrafo.setAttribute('contenteditable', 'false');
-            editPost(postId, paragrafo.textContent);
+            paragraph.setAttribute('contenteditable', 'false');
+            editPost(postId, paragraph.textContent);
             event.currentTarget.parentElement.parentElement.remove();
           });
       });
@@ -174,7 +174,7 @@ export default async function feed() {
             <li>
             <p>Confirma a exclusão de seu poste?</p>
         
-            <button class="btn-delete-confirm" id="yes">Sim</button>
+            <button class="btn-delete-confirm-sim" id="yes">Sim</button>
             <button class="btn-delete-confirm" id="no">Não</button>
             <li>
           </ul>
@@ -182,13 +182,10 @@ export default async function feed() {
         `;
 
         btnforReference.querySelector('.btn-delete-confirm').addEventListener('click', () => {
-            const reference2 = btnforReference.parentNode.querySelector(
-              `.button-delete[data-post-id=${postId}]`,
-            );
-            reference2.innerHTML = '';
-            reference2.innerHTML = '<img src="./img/trash-svg.svg">';
-          });
-        
+          const reference2 = btnforReference.parentNode.querySelector(`.button-delete[data-post-id=${postId}]`);
+          reference2.innerHTML = '';
+          reference2.innerHTML = '<img src="./img/trash-svg.svg">';
+        });
         const btnYes = document.getElementById('yes');
         const btnNo = document.getElementById('no');
         // eslint-disable-next-line no-shadow

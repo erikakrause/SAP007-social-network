@@ -65,7 +65,7 @@ textarea {
   font-weight: bold;
 }
 
-.data {
+.date {
   font-size: 10px;
 }
 
@@ -128,10 +128,12 @@ textarea:focus {
   display: flex;
   align-content: stretch;
   align-items: flex-end;
+  margin-left:15px;
 }
 
 .button-delete {
   border: none;
+
 }
 
 .button-delete img {
@@ -139,13 +141,13 @@ textarea:focus {
   height: auto;
 }
 
-.btn-delete-confirm {
+.btn-delete-confirm-sim, .btn-delete-confirm {
   border: none;
   font-size: 15px;
   cursor: pointer;
 }
 
-.button-edit {
+.button-edit, .save-button, .cancel-button {
   border: none;
 }
 
@@ -165,7 +167,7 @@ textarea:focus {
   width: 22px;
   height: auto;
 }
-
+/* tela desktop */
 @media (min-width: 900px) {
   .logo {
     width: 100px;
@@ -183,7 +185,7 @@ textarea:focus {
   }
 
   .text-holder {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .publish {
@@ -204,8 +206,9 @@ textarea:focus {
     width: 100px;
     height: 40px;
     font-size: 16px;
+    margin-top: 5px;
     margin-bottom: 20px;
-    margin-right: 35px;
+    margin-right: 45px;
   }
 
   .post-contaneir {
@@ -219,14 +222,17 @@ textarea:focus {
     margin: 20px auto;
   }
 
-
   .box-posts {
-    width: 50%;
+    width: 700px;
     border-radius: 8px;
     background-color: #f5efef;
-    margin-left: 20px;
+    margin-left: 160px;
     margin-bottom: 20px;
     line-height: 1.8em;
   }
-
-}
+  .title-username,
+  .date,
+  .paragraph {
+    font-size: 16px;
+  }
+  }
