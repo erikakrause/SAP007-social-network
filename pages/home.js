@@ -1,6 +1,5 @@
-import '../firebase/config-firebase.js';
-import { signIn, signInWithGoogle } from '../firebase/authetication.js';
 import { auth, provider } from '../firebase/config-firebase.js';
+import { signIn, signInWithGoogle } from '../firebase/authentication.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -10,7 +9,7 @@ export default () => {
       <div class="banner"></div>
       <div class= "main-container">
         <div class="container-fluid">
-          <p class="welcome"> Bem vindo(a) viajante! </p>
+          <p class="welcome"> Bem vindo(a) viajante!</p>
           <form action="#" id="sign-in-form" class="sign-in-form">
             <input class= "inputs" type="email" placeholder="E-mail" id="email" />
             <input class= "inputs" type="password" placeholder="Senha" id="password"/>
@@ -36,13 +35,10 @@ export default () => {
 
   btnEnter.addEventListener('click', (e) => {
     // e - comportamento padrão daquele evento
-    e.preventDefault(); //prevenir comportamento padrão
+    e.preventDefault(); // prevenir comportamento padrão
     signIn(email.value, password.value)
-
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         window.location.hash = '#feed';
-        console.log('entrou', response.code);
       })
       .catch((response) => {
         if (response.code === 'auth/invalid-email') {
@@ -57,10 +53,10 @@ export default () => {
   const btnGoogle = container.querySelector('.logoGoogle');
   btnGoogle.addEventListener('click', (e) => {
     e.preventDefault();
-    signInWithGoogle(auth, provider).then(() => {
-      console.log('oie, vc vai funcionar')
-      window.location.hash = '#feed';
-    });
+    signInWithGoogle(auth, provider)
+      .then(() => {
+        window.location.hash = '#feed';
+      });
   });
   return container;
 };

@@ -6,7 +6,7 @@ body {
 }
 
 * {
-  font-family: 'Inder';
+  font-family: 'Inder', sans-serif;
   box-sizing: border-box;
 }
 
@@ -48,9 +48,8 @@ body {
 }
 
 .container-publish {
-  width: 65%;
-  margin-left: 30%;
-  margin-right: 30%;
+  width: 80%;
+  margin-left: 12%;
 }
 
 textarea {
@@ -59,6 +58,15 @@ textarea {
   border-radius: 5px;
   border: none;
   resize: none;
+}
+
+.title-username {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 10px;
 }
 
 textarea:focus {
@@ -118,18 +126,50 @@ textarea:focus {
 
 .icon {
   display: flex;
+  align-content: stretch;
+  align-items: flex-end;
+  margin-left:15px;
 }
 
-.button-heart .button-edit {
+.button-delete {
   border: none;
+
 }
 
-.btn-heart .edit-btn {
-  font-size: 25px;
-  margin-top: 10px;
+.button-delete img {
+  width: 22px;
+  height: auto;
+}
+
+.btn-delete-confirm-sim, .btn-delete-confirm {
+  border: none;
+  font-size: 15px;
   cursor: pointer;
 }
 
+.button-edit, .save-button, .cancel-button {
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.button-edit img {
+  width: 22px;
+  height: auto;
+}
+
+.btn-heart {
+  font-size: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-heart {
+  width: 22px;
+  height: auto;
+}
+/* tela desktop */
 @media (min-width: 900px) {
   .logo {
     width: 100px;
@@ -141,31 +181,60 @@ textarea:focus {
     margin-top: 40px;
   }
 
+  .container-publish {
+    width: 80%;
+    margin-left: 11%;
+  }
+
+  .text-holder {
+    font-size: 18px;
+  }
+
   .publish {
-    width: 580px;
-    margin-top: 50px;
-    margin-left: 400px;
+    width: 700px;
+    margin-top: 30px;
+    margin-left: 267px;
   }
 
   textarea {
-    width: 500px;
-    font-size: 18px;
+    height: 150px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
   }
 
   .publish-btn {
     width: 100px;
     height: 40px;
     font-size: 16px;
+    margin-top: 5px;
     margin-bottom: 20px;
+    margin-right: 45px;
   }
 
-  .publish-btn {
-    margin-right: 35px;
+  .post-contaneir {
+    width: 50%;
+    display: flex;
+    border-radius: 8px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
   }
 
-  .box-post {
-    width: 580px;
-    margin-top: 30px;
+  .box-posts {
+    width: 700px;
+    border-radius: 8px;
+    background-color: #f5efef;
+    margin-left: 160px;
     margin-bottom: 20px;
+    line-height: 1.8em;
   }
-}
+  .title-username,
+  .date,
+  .paragraph {
+    font-size: 16px;
+  }
+  }

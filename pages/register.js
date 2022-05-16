@@ -1,5 +1,5 @@
 import '../firebase/config-firebase.js';
-import { userCreate } from '../firebase/authetication.js';
+import { userCreate } from '../firebase/authentication.js';
 
 export default () => {
   const register = document.createElement('div');
@@ -14,7 +14,7 @@ export default () => {
           <form action="#" id="sign-in-form" class="sign-in-form">
             <input class= "inputs" type="text" placeholder="Nome" id="name"/>
             <input class= "inputs" type="email" placeholder="E-mail" id="email"/>
-            <span class="error"></span>
+            <span class="error" id="error"></span>
             <input class= "inputs" type="password" placeholder="Senha (6 dígitos)" id="password"/>      
             <button class="btnEnter" type="submit"  id="register">Cadastrar</button>
           </form>
@@ -30,8 +30,7 @@ export default () => {
   const password = register.querySelector('#password');
   const btnRegister = register.querySelector('#register');
   const message = register.querySelector('.error');
-  const user = register.querySelector("#name");
-
+  const user = register.querySelector('#name');
 
   btnRegister.addEventListener('click', (e) => {
     e.preventDefault();
