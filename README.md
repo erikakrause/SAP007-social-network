@@ -55,6 +55,7 @@ O protótipo de alta fidelidade foi desenvolvido atráves da ferramenta Figma, o
 ![mobile](./src/img/readme-img/mobile-gif.gif)
 ## 4. Teste de Usabilidades
 ---
+
 ## 5. Considerações finais
 ---
 ### Ferramentas utilizadas
