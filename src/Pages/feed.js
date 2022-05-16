@@ -63,17 +63,18 @@ export default async function feed() {
     posts.innerHTML = '';
     if (postText.value === '') {
       msgAlert.innerHTML = 'Digite uma mensagem!';
-    } else;
-    await createPost(postText.value);
-    posts.innerHTML += `
-    <div class= "posts w-100" id= "posts" > 
-    <p> ${getCurrentUser()}</p>
-    <p>${convertTime(Date.now())}</p> 
-    <p> ${postText.value} </p> 
-    </div>
-    `;
-    posts.innerHTML += control;
-    window.location.reload();
+    } else {
+      await createPost(postText.value);
+      posts.innerHTML += `
+      <div class= "posts w-100" id= "posts" > 
+      <p> ${getCurrentUser()}</p>
+      <p>${convertTime(Date.now())}</p> 
+      <p> ${postText.value} </p> 
+      </div>
+      `;
+      posts.innerHTML += control;
+      window.location.reload();
+    }
   });
 
   // trazendo posts do banco de dados pro feed e ordenando
