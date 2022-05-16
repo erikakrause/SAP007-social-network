@@ -163,12 +163,10 @@ textarea:focus {
   margin-top: 10px;
   cursor: pointer;
   border: none;
-}
-
-.btn-heart {
   width: 22px;
   height: auto;
 }
+
 /* tela desktop */
 @media (min-width: 900px) {
   .logo {
