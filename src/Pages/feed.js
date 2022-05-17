@@ -14,29 +14,28 @@ export default async function feed() {
   // eslint-disable-next-line no-shadow
   const feed = document.createElement('div');
   const boxFeed = `
-<div class="main-div">
-<nav class="top-nav">
-  <picture>
-      <img class="logo" src="./img/logo-sem fundo.png" alt="logo">
-  </picture>
-  <picture>
-    <a href="#home" id="logout">
-      <img  class="button-logout" src="./img/logout.png" alt="Botão Sair">
-    </a> 
-  </picture>
-</nav>
-<div class= "line-header"> </div>
-<div class = "container-publish">
-<section class="publish" id="publish">
-<textarea id="post-text" class="text-holder" placeholder="O que você quer compartilhar?"></textarea>
-    <p id="alert-notification" class="error"></p>
-    <div class= "btn-container">
-      <button class="publish-btn" id="publish-btn">Publicar</button>
+    <div class="main-div">
+      <nav class="top-nav">
+        <picture>
+          <img class="logo" src="./img/logo-sem fundo.png" alt="logo">
+        </picture>
+        <picture>
+          <a href="#home" id="logout">
+            <img  class="button-logout" src="./img/logout.png" alt="Botão Sair">
+          </a> 
+        </picture>
+      </nav>
+    <div class= "line-header"></div>
+    <div class = "container-publish">
+      <section class="publish" id="publish">
+        <textarea id="post-text" class="text-holder" placeholder="O que você quer compartilhar?"></textarea>
+        <p id="alert-notification" class="error"></p>
+        <div class= "btn-container">
+          <button class="publish-btn" id="publish-btn">Publicar</button>
+        </div>
+      </section>
     </div>
-</section>
-</div>
-<div id='posts-container' class="posts-container">  
-</div>
+    <div id='posts-container' class="posts-container"></div>
   </div> 
   `;
 
@@ -103,24 +102,24 @@ export default async function feed() {
       <div class= "box-posts">
         <ul>
           <li>
-          <p class="title-username">${post.userName}</p> 
-          <p class="date">${convertDateObject(post.date)}</p> 
-          <p contenteditable='false' class= "paragraph" data-textId='${post.id}'>${post.textPost}</p>
+            <p class="title-username">${post.userName}</p> 
+            <p class="date">${convertDateObject(post.date)}</p> 
+            <p contenteditable='false' class= "paragraph" data-textId='${post.id}'>${post.textPost}</p>
           </li>
         </ul>
         
         <div class= "line"></div>
         <div class="icon">
-         <button type="button" id="like-btn" class="btn-heart" data-post-id="${post.id}">
-           <img src="./img/heart.svg" "id="btn-heart" class="btn-heart" width="20px"/>
-         </button>
-         <p id="num-likes" class="num-likes">${post.like.length}</p>  
-         <button  type="button" class="button-edit" data-post-id="${post.id}">${postBtnEdit}</button>         
-         <button type="button" class="button-delete" data-post-id="${post.id}">${postBtn}</button>          
+          <button type="button" id="like-btn" class="btn-heart" data-post-id="${post.id}">
+          <img src="./img/heart.svg" "id="btn-heart" class="btn-heart" width="20px"/>
+          </button>
+          <p id="num-likes" class="num-likes">${post.like.length}</p>  
+          <button  type="button" class="button-edit" data-post-id="${post.id}">${postBtnEdit}</button>         
+          <button type="button" class="button-delete" data-post-id="${post.id}">${postBtn}</button>          
         </div>
         <span class="confirm-delete"></span>        
       </div>       
-     `;
+      `;
     });
 
     const buttonEdit = feed.querySelectorAll('.button-edit');
