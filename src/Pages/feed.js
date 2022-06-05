@@ -37,8 +37,7 @@ export default async function feed() {
 </div>
   <div id='posts-container' class="posts-container">  
 </div>
-</div> 
-  `;
+</div>  `;
 
   feed.innerHTML = boxFeed;
 
@@ -64,6 +63,7 @@ export default async function feed() {
     if (postText.value === '') {
       msgAlert.innerHTML = 'Digite uma mensagem!';
     } else {
+
     await createPost(postText.value);
     posts.innerHTML += `
     <div class= "posts w-100" id= "posts" > 
@@ -103,9 +103,9 @@ export default async function feed() {
       <div class= "box-posts">
         <ul>
           <li>
-          <p class="title-username">${post.userName}</p> 
-          <p class="date">${convertDateObject(post.date)}</p> 
-          <p contenteditable='false' class= "paragraph" data-textId='${post.id}'>${post.textPost}</p>
+            <p class="title-username">${post.userName}</p> 
+            <p class="date">${convertDateObject(post.date)}</p> 
+            <p contenteditable='false' class= "paragraph" data-textId='${post.id}'>${post.textPost}</p>
           </li>
         </ul>
         
@@ -119,7 +119,7 @@ export default async function feed() {
             <button type="button" class="button-delete" data-post-id="${post.id}">${postBtn}</button>          
           </div>
         <span class="confirm-delete"></span>        
-        </div>       
+        </div>
       `;
     });
 
