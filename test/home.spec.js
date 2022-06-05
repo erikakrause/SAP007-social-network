@@ -29,7 +29,7 @@ describe('signIn', () => {
     password.value = '123456';
     btnLogin.dispatchEvent(new Event('click'));
 
-    expect(signIn).oHaveBeenCalledWith(email, password);
+    expect(signIn).toHaveBeenCalledWith(email, password);
   });
 });
 const error = { code: 'uth/internal-error' };

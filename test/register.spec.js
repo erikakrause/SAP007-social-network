@@ -9,7 +9,7 @@ jest.mock('../src/firebase/exports.js');
 jest.mock('../src/firebase/authentication.js');
 
 describe('userCreate', () => {
-  it('It should be a function to register the user', async () => {
+  it('It should be a function to register the user', () => {
     userCreate.mockResolvedValueOnce();
     const page = register();
     const email = page.querySelector('#email');

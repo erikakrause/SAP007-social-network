@@ -15,7 +15,7 @@ export default async function feed() {
   const feed = document.createElement('div');
   const boxFeed = `
 <div class="main-div">
-<nav class="top-nav">
+  <nav class="top-nav">
   <picture>
       <img class="logo" src="./img/logo-sem fundo.png" alt="logo">
   </picture>
@@ -35,9 +35,9 @@ export default async function feed() {
     </div>
 </section>
 </div>
-<div id='posts-container' class="posts-container">  
+  <div id='posts-container' class="posts-container">  
 </div>
-  </div> 
+</div> 
   `;
 
   feed.innerHTML = boxFeed;
@@ -63,17 +63,18 @@ export default async function feed() {
     posts.innerHTML = '';
     if (postText.value === '') {
       msgAlert.innerHTML = 'Digite uma mensagem!';
-    } else;
+    } else {
     await createPost(postText.value);
     posts.innerHTML += `
     <div class= "posts w-100" id= "posts" > 
-    <p> ${getCurrentUser()}</p>
-    <p>${convertTime(Date.now())}</p> 
-    <p> ${postText.value} </p> 
+      <p> ${getCurrentUser()}</p>
+      <p>${convertTime(Date.now())}</p> 
+      <p> ${postText.value} </p> 
     </div>
     `;
     posts.innerHTML += control;
-    window.location.reload();
+    }
+    //window.location.reload();
   });
 
   // trazendo posts do banco de dados pro feed e ordenando
@@ -109,17 +110,17 @@ export default async function feed() {
         </ul>
         
         <div class= "line"></div>
-        <div class="icon">
-         <button type="button" id="like-btn" class="btn-heart" data-post-id="${post.id}">
-           <img src="./img/heart.svg" "id="btn-heart" class="btn-heart" width="20px"/>
-         </button>
-         <p id="num-likes" class="num-likes">${post.like.length}</p>  
-         <button  type="button" class="button-edit" data-post-id="${post.id}">${postBtnEdit}</button>         
-         <button type="button" class="button-delete" data-post-id="${post.id}">${postBtn}</button>          
-        </div>
+          <div class="icon">
+            <button type="button" id="like-btn" class="btn-heart" data-post-id="${post.id}">
+              <img src="./img/heart.svg" "id="btn-heart" class="btn-heart" width="20px"/>
+            </button>
+          <p id="num-likes" class="num-likes">${post.like.length}</p>  
+            <button  type="button" class="button-edit" data-post-id="${post.id}">${postBtnEdit}</button>         
+            <button type="button" class="button-delete" data-post-id="${post.id}">${postBtn}</button>          
+          </div>
         <span class="confirm-delete"></span>        
-      </div>       
-     `;
+        </div>       
+      `;
     });
 
     const buttonEdit = feed.querySelectorAll('.button-edit');

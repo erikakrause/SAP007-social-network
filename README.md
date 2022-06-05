@@ -1,4 +1,14 @@
+  <h4 align="center"> 
+
+![logo-sem-fundo](/src/img/logo-sem%20fundo.png)
+</h4>
+
+<h4 align="center"> 
+  
+<h4 align="center">
    # Go Trip - Social Network para amantes de viagens
+</h4>
+
 ## Índice
 
 - [1. Introdução](#1-introdução)
@@ -55,6 +65,7 @@ O protótipo de alta fidelidade foi desenvolvido atráves da ferramenta Figma, o
 ![mobile](./src/img/readme-img/mobile-gif.gif)
 ## 4. Teste de Usabilidades
 ---
+Com base no feedback de usuários realizamos alteração do ícone de retornar a página inicial, segundo usuário o ícone anterior não ficava claro a ação esperada. 
 
 ## 5. Considerações finais
 ---
