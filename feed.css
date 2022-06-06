@@ -90,7 +90,6 @@ textarea:focus {
   border: none;
   cursor: pointer;
   float: right;
-  margin-right: 20px;
   margin-bottom: 10px;
 }
 
@@ -168,7 +167,20 @@ textarea:focus {
 }
 
 /* tela desktop */
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fefaef;
+  color: #fff;
+  height: 50px;
+  padding: 1em;
+  width: 100%;
+}
+
   .logo {
     width: 100px;
     margin-bottom: 8px;
@@ -179,9 +191,16 @@ textarea:focus {
     margin-top: 40px;
   }
 
+.main-div{
+  display: grid;
+  justify-items: center
+}
+
   .container-publish {
+    display: flex;
     width: 80%;
-    margin-left: 11%;
+    justify-content: center;
+    margin: revert;
   }
 
   .text-holder {
@@ -189,9 +208,12 @@ textarea:focus {
   }
 
   .publish {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
     width: 700px;
     margin-top: 30px;
-    margin-left: 267px;
   }
 
   textarea {
@@ -208,7 +230,6 @@ textarea:focus {
     font-size: 16px;
     margin-top: 5px;
     margin-bottom: 20px;
-    margin-right: 45px;
   }
 
   .post-contaneir {
@@ -226,7 +247,6 @@ textarea:focus {
     width: 700px;
     border-radius: 8px;
     background-color: #f5efef;
-    margin-left: 160px;
     margin-bottom: 20px;
     line-height: 1.8em;
   }
