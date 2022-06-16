@@ -18,7 +18,7 @@ O Go Trip é uma rede social direcionada a pessoas que tenham o desejo de compar
 
 Segundo o _Dev Média_: "Single Page Applications (SPA) são aplicações cuja funcionalidade está concentrada em uma única página. Ao invés de recarregar toda a página ou redirecionar o usuário para uma página nova, apenas o conteúdo principal é atualizado de forma assíncrona, mantendo toda a estrutura da página estática."
 
-OBS: Para testar a aplicação sem que seja necessário criar um usuário basta entrar com o seguinte email:  teste@teste.com e senha: 123456.
+OBS: Para testar a aplicação sem que seja necessário criar um usuário basta entrar com o seguinte email:  teste@teste.com e senha: 123456 ou através de uma conta *Google*
 ## 2. Histórias de usuários
 ---
 ### História 1
