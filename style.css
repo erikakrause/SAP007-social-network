@@ -146,17 +146,12 @@ footer {
   color: black
 }
 
-@media (min-width: 1024px){
+@media (min-width: 900px) {
   * {
     font-weight: 400;
+    font-size: 35px;
     line-height: 44px;
   }
-
-  p,a {
-  text-align: center;
-  font-size: 19px;
-  text-decoration: none;
-}
 
   .center {
     height: 100vh;
@@ -176,8 +171,8 @@ footer {
   }
 
   .banner {
-    width: 100%;
-    height: 650px;
+    width: 580px;
+    height: 500px;
     background-image: url('./img/banner1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -185,12 +180,13 @@ footer {
 
   .main-container {
     min-height: 90vh;
+    padding: 0;
     flex-direction: row;
   }
 
   .container-fluid {
-    width: 60vh;
-    height: 58vh;
+    width: 63vh;
+    height: 73vh;
   }
 
   form {
@@ -216,7 +212,6 @@ footer {
     background-color: #acf2be;
     margin: 0;
     padding: 15px 0;
-    position: fixed;
   }
 
   .text-footer {

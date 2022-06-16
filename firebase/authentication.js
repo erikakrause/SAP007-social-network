@@ -51,6 +51,10 @@ export function userCreate(email, password, name) {
         displayName: name,
         photoURL: 'https://example.com/jane-q-user/profile.jpg',
       })
+        .then(() => {
+        })
+        .catch(() => {
+        });
       const user = userCredential.user;
       return user;
     },
